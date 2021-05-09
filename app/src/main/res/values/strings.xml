@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">FrutiApp</string>
+    <string name="fruta_descripcion">una fruta</string>
+    <string name="et_nombre">¿Cómo te llamas?</string>
+    <string name="jugar_btn">jugar</string>
 </resources>
