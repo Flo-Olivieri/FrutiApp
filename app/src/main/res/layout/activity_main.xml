@@ -30,6 +30,7 @@
         android:ems="10"
         android:hint="@string/et_nombre"
         android:inputType="textPersonName"
+        android:maxLength="16"
         android:paddingLeft="50dp"
         android:paddingRight="50dp"
         android:text="@string/et_nombre"

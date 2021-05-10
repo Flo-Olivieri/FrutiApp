@@ -13,7 +13,9 @@ public class MainActivity extends AppCompatActivity {
     private ImageView iv_personaje;
     private TextView  tv_bestScore;
 
-    int num_aleatorio = (int) (Math.random() * 10);
+    int num_aleatorio = (int) (Math.random() * 10); // casteo math.random porque
+    // es un double
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,5 +28,23 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+
+        int id; //guardamos la ruta de imagen a mostrar
+        if (num_aleatorio == 0 || num_aleatorio == 10) {
+            id = getResources().getIdentifier("manzana", "drawable", getPackageName());
+            iv_personaje.setImageResource(id);
+        } else if(num_aleatorio == 1 || num_aleatorio == 9) {
+            id = getResources().getIdentifier("mango", "drawable", getPackageName());
+            iv_personaje.setImageResource(id);
+        } else if (num_aleatorio == 2 || num_aleatorio == 8) {
+            id = getResources().getIdentifier("uva", "drawable", getPackageName());
+            iv_personaje.setImageResource(id);
+        } else if (num_aleatorio == 3 || num_aleatorio == 7) {
+            id = getResources().getIdentifier("naranja", "drawable", getPackageName());
+            iv_personaje.setImageResource(id);
+        } else if (num_aleatorio == 4 || num_aleatorio == 6 || num_aleatorio == 5) {
+            id = getResources().getIdentifier("fresa", "drawable", getPackageName());
+            iv_personaje.setImageResource(id);
+        }
     }
 }
