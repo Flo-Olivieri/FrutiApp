@@ -19,8 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView iv_personaje;
     private TextView  tv_bestScore;
 
-    int num_aleatorio = (int) (Math.random() * 10); // casteo math.random porque
-    // es un double
+    int num_aleatorio = (int) (Math.random() * 10); // casteo math.random porque es un double
 
 
     @Override

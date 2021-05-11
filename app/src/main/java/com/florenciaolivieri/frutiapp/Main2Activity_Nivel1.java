@@ -14,6 +14,5 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setIcon(R.mipmap.ic_launcher);
     }
 }
