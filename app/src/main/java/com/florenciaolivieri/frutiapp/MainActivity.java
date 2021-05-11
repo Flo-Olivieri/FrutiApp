@@ -1,5 +1,6 @@
 package com.florenciaolivieri.frutiapp;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 
@@ -31,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
         iv_personaje = (ImageView) findViewById(R.id.imageView_personaje);
         tv_bestScore = (TextView)  findViewById(R.id.textView_BestScore);
 
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setIcon(R.mipmap.ic_launcher);
 
         int id; //guardamos la ruta de imagen a mostrar
         if (num_aleatorio == 0 || num_aleatorio == 10) {
@@ -54,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Jugar(View view){
-
         String nombre = et_nombre.getText().toString();
         if (!nombre.equals("")) {
             Intent intent = new Intent(this, Main2Activity_Nivel1.class);
@@ -67,9 +67,5 @@ public class MainActivity extends AppCompatActivity {
             InputMethodManager imm = (InputMethodManager)getSystemService(this.INPUT_METHOD_SERVICE);
             imm.showSoftInput(et_nombre, InputMethodManager.SHOW_IMPLICIT);
         }
-    }
-
-    public void onBackPressed() {
-
     }
 }

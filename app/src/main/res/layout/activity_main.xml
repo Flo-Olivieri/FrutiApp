@@ -16,7 +16,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="53dp"
         android:contentDescription="@string/fruta_descripcion"
-        app:srcCompat="@drawable/manzana" />
+        app:srcCompat="@drawable/sandia" />
 
     <EditText
         android:id="@+id/txt_nombre"
@@ -40,8 +40,7 @@
         android:paddingRight="50dp"
         android:textColor="@color/primary"
         android:textColorHint="@color/primary_dark"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        android:textSize="22sp" />
 
     <Button
         android:id="@+id/button"

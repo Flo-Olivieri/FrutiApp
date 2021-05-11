@@ -3,4 +3,14 @@
     <string name="fruta_descripcion">una fruta</string>
     <string name="et_nombre">¿Cómo te llamas?</string>
     <string name="jugar_btn">jugar</string>
+
+    <string name="et_vidas">Manzanas: </string>
+    <string name="jugador_nombre">Jugador: </string>
+    <string name="total_score">Score: 0</string>
+    <string name="sumar_btn">Comprobar</string>
+    <string name="et_respuesta">Respuesta</string>
+    <string name="img_manzanas">manzanas</string>
+    <string name="img_numero">numero</string>
+    <string name="operacion_img">simbolo de operacion matematica</string>
+
 </resources>
