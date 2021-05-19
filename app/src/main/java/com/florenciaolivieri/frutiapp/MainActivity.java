@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText  et_nombre;
@@ -31,9 +33,8 @@ public class MainActivity extends AppCompatActivity {
         iv_personaje = (ImageView) findViewById(R.id.imageView_personaje);
         tv_bestScore = (TextView)  findViewById(R.id.textView_BestScore);
 
-        ActionBar actionBar = getSupportActionBar();
-        assert actionBar != null;
-        actionBar.setDisplayShowHomeEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
 
         int id; //guardamos la ruta de imagen a mostrar
         if (num_aleatorio == 0 || num_aleatorio == 10) {

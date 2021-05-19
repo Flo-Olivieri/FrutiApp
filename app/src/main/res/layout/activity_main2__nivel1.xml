@@ -116,11 +116,10 @@
         android:layout_marginLeft="24dp"
         android:layout_marginBottom="207dp"
         android:autofillHints=""
-        android:background="@drawable/fondoet"
         android:ems="10"
         android:hint="@string/et_respuesta"
         android:inputType="number"
-        android:textColorHint="@color/black"
+        android:textColorHint="@color/primary_dark"
         android:textSize="20sp" />
 
     <Button

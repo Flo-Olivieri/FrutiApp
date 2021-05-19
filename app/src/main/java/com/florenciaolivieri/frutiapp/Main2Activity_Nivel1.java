@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Objects;
+
 public class Main2Activity_Nivel1 extends AppCompatActivity {
 
     private TextView tv_nombre, tv_score;
@@ -27,11 +29,9 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2__nivel1);
 
-        ActionBar actionBar = getSupportActionBar();
-        assert actionBar != null;
-        actionBar.setDisplayShowHomeEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
 
-        Toast.makeText(this,R.string.jugador_nombre, Toast.LENGTH_LONG).show();
         Toast.makeText(this,R.string.msjToastNivel1, Toast.LENGTH_LONG).show();
 
         tv_nombre    = (TextView) findViewById(R.id.textview_nombre);
