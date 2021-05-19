@@ -120,7 +120,8 @@
         android:ems="10"
         android:hint="@string/et_respuesta"
         android:inputType="number"
-        android:textColorHint="@color/black" />
+        android:textColorHint="@color/black"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/button2"

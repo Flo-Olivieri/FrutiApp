@@ -31,7 +31,8 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
         assert actionBar != null;
         actionBar.setDisplayShowHomeEnabled(true);
 
-        Toast.makeText(this,R.string.msjToastNivel1, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,R.string.jugador_nombre, Toast.LENGTH_LONG).show();
+        Toast.makeText(this,R.string.msjToastNivel1, Toast.LENGTH_LONG).show();
 
         tv_nombre    = (TextView) findViewById(R.id.textview_nombre);
         tv_score     = (TextView) findViewById(R.id.textview_score);
