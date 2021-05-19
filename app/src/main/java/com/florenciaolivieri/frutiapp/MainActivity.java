@@ -32,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
         tv_bestScore = (TextView)  findViewById(R.id.textView_BestScore);
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setIcon(R.mipmap.ic_launcher);
+        assert actionBar != null;
+        actionBar.setDisplayShowHomeEnabled(true);
 
         int id; //guardamos la ruta de imagen a mostrar
         if (num_aleatorio == 0 || num_aleatorio == 10) {
@@ -59,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, Main2Activity_Nivel1.class);
             intent.putExtra("jugador", nombre);
             startActivity(intent);
-            finish();
         } else {
             Toast.makeText(this,"Primero debes escribir tu nombre",Toast.LENGTH_SHORT).show();
             et_nombre.requestFocus();

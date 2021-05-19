@@ -8,7 +8,7 @@
     tools:context=".Main2Activity_Nivel1">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textview_nombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -24,7 +24,7 @@
         tools:layout_editor_absoluteY="200dp" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textview_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -52,7 +52,7 @@
         android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageview_vidas"
         android:layout_width="80dp"
         android:layout_height="50dp"
         android:layout_alignParentStart="true"
@@ -65,28 +65,30 @@
         android:contentDescription="@string/img_manzanas" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imgview_aUno"
         android:layout_width="110dp"
         android:layout_height="120dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="204dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="203dp"
         android:contentDescription="@string/img_numero"
         app:srcCompat="@drawable/cero" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/imgview_aDos"
         android:layout_width="110dp"
         android:layout_height="120dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
         android:layout_marginStart="241dp"
         android:layout_marginLeft="241dp"
-        android:layout_marginTop="204dp"
+        android:layout_marginTop="201dp"
         android:contentDescription="@string/img_numero"
         app:srcCompat="@drawable/cero" />
 
@@ -96,11 +98,11 @@
         android:layout_height="120dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="134dp"
-        android:layout_marginTop="204dp"
-        app:srcCompat="@drawable/adicion"
-        android:contentDescription="@string/operacion_img" />
+        android:layout_centerInParent="true"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="203dp"
+        android:contentDescription="@string/operacion_img"
+        app:srcCompat="@drawable/adicion" />
 
     <EditText
         android:id="@+id/editText_resultado"
@@ -109,26 +111,30 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="41dp"
-        android:layout_marginLeft="41dp"
-        android:layout_marginBottom="189dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginBottom="207dp"
         android:autofillHints=""
+        android:background="@drawable/fondoet"
         android:ems="10"
         android:hint="@string/et_respuesta"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:textColorHint="@color/black" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="170dp"
-        android:layout_height="50dp"
+        android:layout_width="172dp"
+        android:layout_height="43dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="38dp"
-        android:layout_marginRight="38dp"
-        android:layout_marginBottom="186dp"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="44dp"
+        android:layout_marginRight="44dp"
+        android:layout_marginBottom="216dp"
         android:background="@drawable/fondoboton"
         android:text="@string/sumar_btn"
-        android:textColor="@color/black" />
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp" />
 </RelativeLayout>
