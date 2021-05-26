@@ -13,5 +13,6 @@
     <string name="img_numero">numero</string>
     <string name="operacion_img">simbolo de operacion matematica</string>
     <string name="msjToastNivel1">Nivel 1 - Sumas Básicas</string>
+    <string name="msjToastBtnComprobar">Escribe tu respuesta</string>
 
 </resources>

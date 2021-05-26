@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -14,7 +15,7 @@ import java.util.Objects;
 
 public class Main2Activity_Nivel1 extends AppCompatActivity {
 
-    private TextView tv_nombre, tv_score;
+    private TextView tv_nombre, tv_score, tv_manzanas;
     private ImageView iv_vidas, iv_aUno, iv_aDos;
     private EditText et_respuesta;
 
@@ -38,6 +39,7 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
 
         tv_nombre    = (TextView) findViewById(R.id.textview_nombre);
         tv_score     = (TextView) findViewById(R.id.textview_score);
+        tv_manzanas  = (TextView) findViewById(R.id.textView_manzanas);
         iv_vidas     = (ImageView) findViewById(R.id.imageview_vidas);
         iv_aUno      = (ImageView) findViewById(R.id.imgview_aUno);
         iv_aDos      = (ImageView) findViewById(R.id.imgview_aDos);
@@ -50,8 +52,51 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
 
 
     }
+    /* Método para comprobar que las respuetas sean correctas
+     * El score no puede superar 10 */
+    public void Comparar(View view){
+        String respuesta = et_respuesta.getText().toString();
 
-    /* Metodo para los numeros aleatorios
+        if (!respuesta.equals("")){
+            int respuesta_jugador = Integer.parseInt(respuesta);
+            if (resultado == respuesta_jugador){
+                score++;
+                Toast.makeText(this, "Respuesta correcta! Continua así. Score: " + score, Toast.LENGTH_SHORT).show();
+                tv_score.setText("Score: " + score);
+                et_respuesta.setText("");
+
+            } else {
+                //Toast.makeText(this, "Respuesta incorrecta", Toast.LENGTH_SHORT).show();
+                vidas--;
+                switch (vidas){
+                    case 3:
+                        iv_vidas.setImageResource(R.drawable.tresvidas);
+                        break;
+                    case 2:
+                        Toast.makeText(this, "Respuesta incorrecta! Te quedan 2 manzanas", Toast.LENGTH_SHORT).show();
+                        iv_vidas.setImageResource(R.drawable.dosvidas);
+                        break;
+                    case 1:
+                        Toast.makeText(this, "Respuesta incorrecta! Te queda 1 manzana", Toast.LENGTH_SHORT).show();
+                        iv_vidas.setImageResource(R.drawable.unavida);
+                        break;
+                    case 0:
+                        Toast.makeText(this, "Respuesta incorrecta! Te quedaste sin manzanas. GAME OVER!!", Toast.LENGTH_LONG).show();
+                        tv_manzanas.setText("Manzanas: " + vidas);
+                        iv_vidas.setImageResource(R.drawable.fondoet);
+                        Intent intent = new Intent(this, MainActivity.class);
+                        startActivity(intent);
+                        break;
+                }
+                et_respuesta.setText("");
+            }
+            NumAleatorio();
+        } else {
+            Toast.makeText(this, R.string.msjToastBtnComprobar, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    /* Método para los numeros aleatorios
     * El score no puede superar 10 */
     public void NumAleatorio(){
         if (score <= 9){
