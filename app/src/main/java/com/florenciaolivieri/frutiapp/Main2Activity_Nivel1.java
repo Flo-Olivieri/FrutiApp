@@ -3,6 +3,7 @@ package com.florenciaolivieri.frutiapp;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -23,7 +24,7 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
     String nombre_jugador, string_score, string_vidas;
 
     //vector para las imagenes dinamicas
-    String numero [] = {"cero", "uno", "dos", "tres", "cuatro", "cinco", "seis","siete", "ocho", "nueve"};
+    String numero[] = {"cero", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve"};
 
 
 
@@ -35,31 +36,32 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
 
-        Toast.makeText(this,R.string.msjToastNivel1, Toast.LENGTH_LONG).show();
+        Toast.makeText(this, R.string.msjToastNivel1, Toast.LENGTH_LONG).show();
 
-        tv_nombre    = (TextView) findViewById(R.id.textview_nombre);
-        tv_score     = (TextView) findViewById(R.id.textview_score);
-        tv_manzanas  = (TextView) findViewById(R.id.textView_manzanas);
-        iv_vidas     = (ImageView) findViewById(R.id.imageview_vidas);
-        iv_aUno      = (ImageView) findViewById(R.id.imgview_aUno);
-        iv_aDos      = (ImageView) findViewById(R.id.imgview_aDos);
+        tv_nombre = (TextView) findViewById(R.id.textview_nombre);
+        tv_score = (TextView) findViewById(R.id.textview_score);
+        tv_manzanas = (TextView) findViewById(R.id.textView_manzanas);
+        iv_vidas = (ImageView) findViewById(R.id.imageview_vidas);
+        iv_aUno = (ImageView) findViewById(R.id.imgview_aUno);
+        iv_aDos = (ImageView) findViewById(R.id.imgview_aDos);
         et_respuesta = (EditText) findViewById(R.id.editText_resultado);
 
         nombre_jugador = getIntent().getStringExtra("jugador");
-        tv_nombre.setText("Jugador: "+ nombre_jugador);
+        tv_nombre.setText("Jugador: " + nombre_jugador);
 
         NumAleatorio();
 
 
     }
+
     /* Método para comprobar que las respuetas sean correctas
      * El score no puede superar 10 */
-    public void Comparar(View view){
+    public void Comparar(View view) {
         String respuesta = et_respuesta.getText().toString();
 
-        if (!respuesta.equals("")){
+        if (!respuesta.equals("")) {
             int respuesta_jugador = Integer.parseInt(respuesta);
-            if (resultado == respuesta_jugador){
+            if (resultado == respuesta_jugador) {
                 score++;
                 Toast.makeText(this, "Respuesta correcta! Continua así. Score: " + score, Toast.LENGTH_SHORT).show();
                 tv_score.setText("Score: " + score);
@@ -68,7 +70,7 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
             } else {
                 //Toast.makeText(this, "Respuesta incorrecta", Toast.LENGTH_SHORT).show();
                 vidas--;
-                switch (vidas){
+                switch (vidas) {
                     case 3:
                         iv_vidas.setImageResource(R.drawable.tresvidas);
                         break;
@@ -97,9 +99,9 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
     }
 
     /* Método para los numeros aleatorios
-    * El score no puede superar 10 */
-    public void NumAleatorio(){
-        if (score <= 9){
+     * El score no puede superar 10 */
+    public void NumAleatorio() {
+        if (score <= 9) {
 
             numAleatorio_uno = (int) (Math.random() * 10);
             numAleatorio_dos = (int) (Math.random() * 10);
@@ -108,22 +110,22 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
 
             if (resultado <= 10) {
                 for (int i = 0; i < numero.length; i++) {
-                    int id = getResources().getIdentifier(numero[i],"drawable",getPackageName());
-                    if (numAleatorio_uno == i){
+                    int id = getResources().getIdentifier(numero[i], "drawable", getPackageName());
+                    if (numAleatorio_uno == i) {
                         iv_aUno.setImageResource(id);
-                    } if (numAleatorio_dos == i){
+                    }
+                    if (numAleatorio_dos == i) {
                         iv_aDos.setImageResource(id);
                     }
 
                 }
 
-
             } else {
                 NumAleatorio();
-
             }
 
         } else {
+            Toast.makeText(this, "Superaste este Nivel, Felicitaciones!", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, Main2Activity_Nivel2.class);
             string_score = String.valueOf(score);
             string_vidas = String.valueOf(vidas);

@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, Main2Activity_Nivel1.class);
             intent.putExtra("jugador", nombre);
             startActivity(intent);
-            finish();
+            //finish();
         } else {
             Toast.makeText(this,"Primero debes escribir tu nombre",Toast.LENGTH_SHORT).show();
             et_nombre.requestFocus();
