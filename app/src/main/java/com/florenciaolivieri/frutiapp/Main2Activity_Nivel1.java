@@ -102,7 +102,7 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
     /* Método para los numeros aleatorios
      * El score no puede superar 10 */
     public void NumAleatorio() {
-        if (score <= 10) {
+        if (score <= 9) {
 
             numAleatorio_uno = (int) (Math.random() * 10);
             numAleatorio_dos = (int) (Math.random() * 10);
