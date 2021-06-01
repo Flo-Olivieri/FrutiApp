@@ -1,3 +1,4 @@
+
 package com.florenciaolivieri.frutiapp;
 
 import androidx.appcompat.app.ActionBar;
@@ -63,7 +64,7 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
             int respuesta_jugador = Integer.parseInt(respuesta);
             if (resultado == respuesta_jugador) {
                 score++;
-                Toast.makeText(this, "Respuesta correcta! Continua así. Score: " + score, Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Respuesta correcta! Continua así", Toast.LENGTH_SHORT).show();
                 tv_score.setText("Score: " + score);
                 et_respuesta.setText("");
 
@@ -75,15 +76,15 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
                         iv_vidas.setImageResource(R.drawable.tresvidas);
                         break;
                     case 2:
-                        Toast.makeText(this, "Respuesta incorrecta! Te quedan 2 manzanas", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Respuesta incorrecta! Te quedan 2 vidas", Toast.LENGTH_SHORT).show();
                         iv_vidas.setImageResource(R.drawable.dosvidas);
                         break;
                     case 1:
-                        Toast.makeText(this, "Respuesta incorrecta! Te queda 1 manzana", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Respuesta incorrecta! Te queda 1 vida", Toast.LENGTH_SHORT).show();
                         iv_vidas.setImageResource(R.drawable.unavida);
                         break;
                     case 0:
-                        Toast.makeText(this, "Respuesta incorrecta! Te quedaste sin manzanas. GAME OVER!!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(this, "Respuesta incorrecta! Te quedaste sin vidas. GAME OVER!!", Toast.LENGTH_LONG).show();
                         tv_manzanas.setText("Manzanas: " + vidas);
                         iv_vidas.setImageResource(R.drawable.fondoet);
                         Intent intent = new Intent(this, MainActivity.class);
@@ -101,7 +102,7 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
     /* Método para los numeros aleatorios
      * El score no puede superar 10 */
     public void NumAleatorio() {
-        if (score <= 9) {
+        if (score <= 10) {
 
             numAleatorio_uno = (int) (Math.random() * 10);
             numAleatorio_dos = (int) (Math.random() * 10);

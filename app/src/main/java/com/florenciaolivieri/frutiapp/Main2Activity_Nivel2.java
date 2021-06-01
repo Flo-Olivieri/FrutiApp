@@ -1,9 +1,12 @@
+
 package com.florenciaolivieri.frutiapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -39,6 +42,7 @@ public class Main2Activity_Nivel2 extends AppCompatActivity {
         iv_Vidas = (ImageView) findViewById(R.id.imageView_vidas);
         iv_aUno = (ImageView) findViewById(R.id.imgView_aUno);
         iv_aDos = (ImageView) findViewById(R.id.imgView_aDos);
+        et_respuesta = (EditText) findViewById(R.id.editText_Resultado);
 
         nombre_jugador = getIntent().getStringExtra("jugador");
         tv_Nombre.setText("Jugador: " + nombre_jugador);
@@ -62,6 +66,81 @@ public class Main2Activity_Nivel2 extends AppCompatActivity {
                 break;
         }
 
-
+        NumAleatorio();
     }
+
+    /* Método para comprobar que las respuetas sean correctas
+     * El score no puede superar 10 */
+    public void Comparar(View view) {
+        String respuesta = et_respuesta.getText().toString();
+
+        if (!respuesta.equals("")) {
+            int respuesta_jugador = Integer.parseInt(respuesta);
+            if (respuesta_jugador == resultado) {
+                Toast.makeText(this, "Respuesta correcta!", Toast.LENGTH_SHORT).show();
+                score++;
+                tv_Score.setText("Score: " + score);
+                et_respuesta.setText("");
+
+            } else {
+                Toast.makeText(this, "Respuesta incorrecta!", Toast.LENGTH_SHORT).show();
+                vidas--;
+                switch (vidas) {
+                    case 3:
+                        iv_Vidas.setImageResource(R.drawable.tresvidas);
+                        break;
+                    case 2:
+                        Toast.makeText(this, "Respuesta incorrecta! Te quedan 2 manzanas", Toast.LENGTH_SHORT).show();
+                        iv_Vidas.setImageResource(R.drawable.dosvidas);
+                        break;
+                    case 1:
+                        Toast.makeText(this, "Respuesta incorrecta! Te queda 1 manzana", Toast.LENGTH_SHORT).show();
+                        iv_Vidas.setImageResource(R.drawable.unavida);
+                        break;
+                    case 0:
+                        Toast.makeText(this, "Respuesta incorrecta! Te quedaste sin manzanas. GAME OVER!!", Toast.LENGTH_LONG).show();
+                        tv_Manzanas.setText("Manzanas: " + vidas);
+                        iv_Vidas.setImageResource(R.drawable.fondoet);
+                        Intent intent = new Intent(this, MainActivity.class);
+                        startActivity(intent);
+                        break;
+                }
+                et_respuesta.setText("");
+            }
+            NumAleatorio();
+        } else {
+            Toast.makeText(this, R.string.msjToastBtnComprobar, Toast.LENGTH_SHORT).show();
+
+        }
+    }
+
+    public void NumAleatorio() {
+        if (score <= 19) {
+            numAleatorio_uno = (int) (Math.random() * 10);
+            numAleatorio_dos = (int) (Math.random() * 10);
+            resultado = numAleatorio_uno + numAleatorio_dos;
+
+            if (resultado <= 10) {
+                for (int i = 0; i < numero.length; i++) {
+                    int id = getResources().getIdentifier(numero[i], "drawable", getPackageName());
+                    if (numAleatorio_uno == i) {
+                        iv_aUno.setImageResource(id);
+                    }
+                    if (numAleatorio_dos == i) {
+                        iv_aDos.setImageResource(id);
+                    }
+
+                }
+
+            } else {
+                NumAleatorio();
+            }
+        } else {
+            Toast.makeText(this, "Superaste este Nivel, Felicitaciones!", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(this, Main2Activity_Nivel3.class);
+            startActivity(i);
+        }
+    }
+
+
 }
