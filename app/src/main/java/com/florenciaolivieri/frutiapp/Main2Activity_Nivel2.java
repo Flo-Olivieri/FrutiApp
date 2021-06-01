@@ -38,6 +38,7 @@ public class Main2Activity_Nivel2 extends AppCompatActivity {
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
 
         tv_Nombre = (TextView) findViewById(R.id.textView_nombre);
+        tv_Manzanas = (TextView) findViewById(R.id.textView_manzanas);
         tv_Score = (TextView) findViewById(R.id.textView_score);
         iv_Vidas = (ImageView) findViewById(R.id.imageView_vidas);
         iv_aUno = (ImageView) findViewById(R.id.imgView_aUno);
@@ -83,7 +84,6 @@ public class Main2Activity_Nivel2 extends AppCompatActivity {
                 et_respuesta.setText("");
 
             } else {
-                Toast.makeText(this, "Respuesta incorrecta!", Toast.LENGTH_SHORT).show();
                 vidas--;
                 switch (vidas) {
                     case 3:

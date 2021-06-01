@@ -133,8 +133,8 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
             intent.putExtra("jugador", nombre_jugador);
             intent.putExtra("score", string_score);
             intent.putExtra("vidas", string_vidas);
-
             startActivity(intent);
+            finish();
         }
     }
 }
