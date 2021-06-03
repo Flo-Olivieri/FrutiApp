@@ -65,7 +65,6 @@ public class Main2Activity_Nivel3 extends AppCompatActivity {
         }
 
         NumAleatorio();
-
     }
 
     public void NumAleatorio() {
