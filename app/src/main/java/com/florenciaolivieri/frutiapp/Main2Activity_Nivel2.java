@@ -138,6 +138,9 @@ public class Main2Activity_Nivel2 extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Superaste este Nivel, Felicitaciones!", Toast.LENGTH_SHORT).show();
             Intent i = new Intent(this, Main2Activity_Nivel3.class);
+            i.putExtra("nombre_jugador", nombre_jugador);
+            i.putExtra("score", score);
+            i.putExtra("vidas", vidas);
             startActivity(i);
         }
     }
