@@ -4,12 +4,142 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Main2Activity_Nivel3"
-    android:background="@drawable/globos">
+    android:background="@drawable/wallpaperprincipal"
+    tools:context=".Main2Activity_Nivel3">
+
+    <ImageView
+        android:id="@+id/imgView_AUno"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="112dp"
+        android:contentDescription="@string/img_numero"
+        app:srcCompat="@drawable/cero" />
+
+    <ImageView
+        android:id="@+id/imageview_resta"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="142dp"
+        android:layout_marginLeft="142dp"
+        android:layout_marginTop="210dp"
+        android:contentDescription="@string/operacion_img"
+        app:srcCompat="@drawable/resta" />
+
+    <ImageView
+        android:id="@+id/imgView_ADos"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginBottom="193dp"
+        android:contentDescription="@string/img_numero"
+        app:srcCompat="@drawable/cero" />
+
+    <Button
+        android:id="@+id/button_comprobar2"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="116dp"
+        android:background="@drawable/fondoboton"
+        android:text="@string/sumar_btn"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/edt_Resultado"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="117dp"
+        android:autofillHints=""
+        android:background="@drawable/fondoet"
+        android:ems="10"
+        android:hint="@string/et_respuesta"
+        android:inputType="number"
+        android:textColorHint="@color/primary_dark"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/tv_Manzanas"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="En construccion"
-        android:textSize="24sp"/>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="62dp"
+        android:text="@string/et_vidas"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_Jugador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="13dp"
+        android:text="@string/jugador_nombre"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_Score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="251dp"
+        android:layout_marginLeft="251dp"
+        android:layout_marginTop="14dp"
+        android:text="@string/total_score"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/iv_manzanas"
+        android:layout_width="95dp"
+        android:layout_height="32dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="131dp"
+        android:layout_marginLeft="131dp"
+        android:layout_marginTop="62dp"
+        android:contentDescription="@string/fruta_descripcion"
+        app:srcCompat="@drawable/tresvidas" />
+
 </RelativeLayout>
