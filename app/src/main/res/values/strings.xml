@@ -15,6 +15,7 @@
     <string name="msjToastNivel1">Nivel 1 - Sumas Básicas</string>
     <string name="msjToastNivel2">Nivel 2 - Sumas Moderadas</string>
     <string name="msjToastNivel3">Nivel 3 - Restas</string>
+    <string name="msjToastNivelAprobado">Superaste este Nivel, Felicitaciones!</string>
     <string name="msjToastBtnComprobar">Escribe tu respuesta</string>
 
 

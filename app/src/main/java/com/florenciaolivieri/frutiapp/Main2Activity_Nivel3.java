@@ -64,6 +64,22 @@ public class Main2Activity_Nivel3 extends AppCompatActivity {
 
         }
 
+        NumAleatorio();
 
+    }
+
+    public void NumAleatorio() {
+        if (resultado <= 29) {
+
+            numAleatorio_Uno = (int) (Math.random() * 10);
+            numAleatorio_Dos = (int) (Math.random() * 10);
+
+            resultado = numAleatorio_Uno - numAleatorio_Dos;
+
+
+        } else {
+            Toast.makeText(this, R.string.msjToastNivelAprobado, Toast.LENGTH_SHORT).show();
+            //Intent intent = new Intent(this, Main2Activity_Nivel4.class);
+        }
     }
 }

@@ -136,7 +136,7 @@ public class Main2Activity_Nivel2 extends AppCompatActivity {
                 NumAleatorio();
             }
         } else {
-            Toast.makeText(this, "Superaste este Nivel, Felicitaciones!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.msjToastNivelAprobado, Toast.LENGTH_SHORT).show();
             Intent i = new Intent(this, Main2Activity_Nivel3.class);
             i.putExtra("nombre_jugador", nombre_jugador);
             i.putExtra("score", score);
