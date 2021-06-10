@@ -138,9 +138,11 @@ public class Main2Activity_Nivel2 extends AppCompatActivity {
         } else {
             Toast.makeText(this, R.string.msjToastNivelAprobado, Toast.LENGTH_SHORT).show();
             Intent i = new Intent(this, Main2Activity_Nivel3.class);
+            string_score = String.valueOf(score);
+            string_vidas = String.valueOf(vidas);
             i.putExtra("nombre_jugador", nombre_jugador);
-            i.putExtra("score", score);
-            i.putExtra("vidas", vidas);
+            i.putExtra("score", string_score);
+            i.putExtra("vidas", string_vidas);
             startActivity(i);
         }
     }

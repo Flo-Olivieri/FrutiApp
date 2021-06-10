@@ -60,6 +60,7 @@
         android:layout_marginRight="25dp"
         android:layout_marginBottom="116dp"
         android:background="@drawable/fondoboton"
+        android:onClick="Comparar"
         android:text="@string/sumar_btn"
         android:textColor="@android:color/background_light"
         android:textSize="18sp" />

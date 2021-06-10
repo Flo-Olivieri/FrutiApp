@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -17,7 +18,7 @@ public class Main2Activity_Nivel3 extends AppCompatActivity {
     EditText et_Resultado;
     ImageView iv_NumAleatorio1, iv_NumAleatorio2, iv_Manzanas;
 
-    String nombre_jugador, string_Score, string_Vidas;
+    String nombre_jugador, string_score, string_Vidas;
     int score, numAleatorio_Uno, numAleatorio_Dos, resultado, vidas;
 
     //vector para las imagenes dinamicas
@@ -44,9 +45,9 @@ public class Main2Activity_Nivel3 extends AppCompatActivity {
         nombre_jugador = getIntent().getStringExtra("nombre_jugador");
         tv_Jugador.setText("Jugador: " + nombre_jugador);
 
-        string_Score = getIntent().getStringExtra("score");
-        score = Integer.parseInt(string_Score);
-        tv_Jugador.setText("Score: " + score);
+        string_score = getIntent().getStringExtra("score");
+        score = Integer.parseInt(string_score);
+        tv_Score.setText("Score: " + string_score);
 
         string_Vidas = getIntent().getStringExtra("vidas");
         vidas = Integer.parseInt(string_Vidas);
@@ -67,18 +68,75 @@ public class Main2Activity_Nivel3 extends AppCompatActivity {
         NumAleatorio();
     }
 
+    public void Comparar(View view) {
+        String respuesta = et_Resultado.getText().toString();
+
+        if (!respuesta.equals("")) {
+            int respuesta_jugador = Integer.parseInt(respuesta);
+            if (respuesta_jugador == resultado) {
+                Toast.makeText(this, "Respuesta correcta!", Toast.LENGTH_SHORT).show();
+                score++;
+                tv_Score.setText("Score: " + score);
+                et_Resultado.setText("");
+
+            } else {
+                vidas--;
+                switch (vidas) {
+                    case 3:
+                        iv_Manzanas.setImageResource(R.drawable.tresvidas);
+                        break;
+                    case 2:
+                        Toast.makeText(this, "Respuesta incorrecta! Te quedan 2 manzanas", Toast.LENGTH_SHORT).show();
+                        iv_Manzanas.setImageResource(R.drawable.dosvidas);
+                        break;
+                    case 1:
+                        Toast.makeText(this, "Respuesta incorrecta! Te queda 1 manzana", Toast.LENGTH_SHORT).show();
+                        iv_Manzanas.setImageResource(R.drawable.unavida);
+                        break;
+                    case 0:
+                        Toast.makeText(this, "Respuesta incorrecta! Te quedaste sin manzanas. GAME OVER!!", Toast.LENGTH_LONG).show();
+                        tv_Manzanas.setText("Manzanas: " + vidas);
+                        iv_Manzanas.setImageResource(R.drawable.fondoet);
+                        Intent intent = new Intent(this, MainActivity.class);
+                        startActivity(intent);
+                        break;
+                }
+                et_Resultado.setText("");
+            }
+            NumAleatorio();
+        } else {
+            Toast.makeText(this, R.string.msjToastBtnComprobar, Toast.LENGTH_SHORT).show();
+
+        }
+    }
+
     public void NumAleatorio() {
-        if (resultado <= 29) {
+        if (score <= 29) {
 
             numAleatorio_Uno = (int) (Math.random() * 10);
             numAleatorio_Dos = (int) (Math.random() * 10);
 
             resultado = numAleatorio_Uno - numAleatorio_Dos;
+            if (resultado >= 0) {
+                for (int i = 0; i < numero.length; i++) {
+                    int id = getResources().getIdentifier(numero[i], "drawable", getPackageName());
+                    if (numAleatorio_Uno == i) {
+                        iv_NumAleatorio1.setImageResource(id);
+                    }
+                    if (numAleatorio_Dos == i) {
+                        iv_NumAleatorio2.setImageResource(id);
+                    }
+
+                }
+
+            } else {
+                NumAleatorio();
+            }
 
 
         } else {
             Toast.makeText(this, R.string.msjToastNivelAprobado, Toast.LENGTH_SHORT).show();
-            //Intent intent = new Intent(this, Main2Activity_Nivel4.class);
+            Intent intent = new Intent(this, Main2Activity_Nivel4.class);
         }
     }
 }
